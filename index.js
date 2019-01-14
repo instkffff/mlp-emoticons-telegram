@@ -1,30 +1,41 @@
 const Telegraf = require('telegraf')
-const fetch = require('node-fetch')
 require('dotenv').config({path:'conf.env'})
-const pony = require('./pony.json')
 //const Query = require('jsonpath')
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
 async function GetPony (query = '' , offset, limit){
-	const { ponys } = await pony.json()
-	return ponys
+	const pony = require('./pony.json')[query]
+	return pony
+
+  console.log(pony)
 }
+
+
 
 bot.on('inline_query',async({inlineQuery, answerInlineQuery}) => {
 	const offset = parseInt(inlineQuery.offset) || 0
-	const Ponys = await GetPony(inlineQuery.query, offset, 30)
-	const results = Ponys.map((Pony)=>({
+	const Ponys = await GetPony(inlineQuery.query, offset, 3)
+	const results = Ponys((Pony)=>({
 		type: 'photo',
 		id: Pony.slug,
-		photo_url: './emotes/JPEG/`${Pony.name}`',
-		thumb_url: './emotes/JPEG/`${Pony.name}`',
+		photo_url: `https://entireflippantstate--liuming.repl.co/emotes/JPEG/${Pony.name}`,
+		thumb_url: `https://entireflippantstate--liuming.repl.co/emotes/JPEG/${Pony.name}`,
 		title: Pony.name,
 	}))
 
-	return answerInlineQuery(results, {next_offset: offset + 30})
+	return answerInlineQuery(results, {next_offset: offset + 3})
 })
 
+const server = http.createServer((request, response) => {
+  // You pass two more arguments for config and middleware
+  // More details here: https://github.com/zeit/serve-handler#options
+  return handler(request, response);
+})
+
+bot.catch((err) => {
+  console.log('Error', err)
+})
 
 
 bot.launch()
