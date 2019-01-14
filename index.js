@@ -16,13 +16,13 @@ async function GetPony (query = '' , offset, limit){
 bot.on('inline_query',async({inlineQuery, answerInlineQuery}) => {
 	const offset = parseInt(inlineQuery.offset) || 0
 	const Ponys = await GetPony(inlineQuery.query, offset, 3)
-	const results = Ponys((Pony)=>({
+	const results = {
 		type: 'photo',
 		id: Pony.slug,
-		photo_url: `https://entireflippantstate--liuming.repl.co/emotes/JPEG/${Pony.name}`,
-		thumb_url: `https://entireflippantstate--liuming.repl.co/emotes/JPEG/${Pony.name}`,
+		photo_url: `http://155.94.228.151:3000/${Pony.name}`,
+		thumb_url: `http://155.94.228.151:3000/${Pony.name}`,
 		title: Pony.name,
-	}))
+	}
 
 	return answerInlineQuery(results, {next_offset: offset + 3})
 })

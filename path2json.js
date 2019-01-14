@@ -37,4 +37,4 @@
   }
 
   var gallery = dirTree('emotes/JPEG');
-  fs.writeFile('pony.json', JSON.stringify(gallery.children));
+  fs.writeFileSync('pony.json', JSON.stringify(gallery.children));
