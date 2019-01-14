@@ -30,11 +30,11 @@
       info.children = info.children.filter(function(e) { return e; });
     } else {
       // thumbnails should exist as a property of the gallery image itself, rather than adjacent neighbors in the collection
-      info.thumb = info.name.replace(/\.[^/.]+$/, '') + '_thumbnail.' + info.name.split('.').pop();
+      // info.thumb = info.name.replace(/\.[^/.]+$/, '') + '_thumbnail.' + info.name.split('.').pop();
     }
 
     return info;
   }
 
-  var gallery = dirTree('public/assets/images/gallery');
-  fs.writeFile('public/gallery.json', JSON.stringify(gallery.children));
+  var gallery = dirTree('emotes/JPEG');
+  fs.writeFile('pony.json', JSON.stringify(gallery.children));
