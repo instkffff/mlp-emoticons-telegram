@@ -31,7 +31,8 @@ The excellent set of free and widely used silk icons from FAMFAMFAM come as a se
 
 * Options:
 
-  ``` -h, --help            show this help message and exit
+  ``` 
+  -h, --help            show this help message and exit
   
   -o OUTPUTDIR, --outputdir=OUTPUTDIR
   
@@ -45,9 +46,8 @@ The excellent set of free and widely used silk icons from FAMFAMFAM come as a se
   
   -r, --replace         Delete the PNG files after converting them to GIF
   
-  ... -v, --verbose         Verbose output
-
-
+  -v, --verbose         Verbose output
+  ...
 
 
 http://www.coderholic.com/png2gif/

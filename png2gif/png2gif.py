@@ -4,7 +4,7 @@
 # 2008 - http://www.coderholic.com/png2gif
 
 import sys
-import image
+from PIL import Image
 import random
 import optparse
 import os
