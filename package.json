@@ -1,0 +1,30 @@
+{
+  "name": "mlp-emoticons-telegram",
+  "version": "1.0.0",
+  "description": "emoticons my little pony ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/instkffff/mlp-emoticons-telegram.git"
+  },
+  "keywords": [
+    "my",
+    "little",
+    "pony"
+  ],
+  "author": "NightCandle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/instkffff/mlp-emoticons-telegram/issues"
+  },
+  "homepage": "https://github.com/instkffff/mlp-emoticons-telegram#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "jsonpath": "^1.0.0",
+    "node-fetch": "^2.3.0",
+    "telegraf": "^3.26.0"
+  }
+}
