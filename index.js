@@ -39,7 +39,6 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
 
   const results = []
 
-  console.log(Query)
 
   if(inlineQuery.query.length === 0){
     Pony_id = 11
