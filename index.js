@@ -5,11 +5,11 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 
 const pony = require('./pony.json')
 
-bot.on('inline_query', (ctx) => {
+bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
   //console.log(ctx)
   //console.log(ctx.update.inline_query.query)
   const results = []
-  for ( i = 0; i < ctx.update.inline_query.query; i++ ){
+  for ( i = 0; i < inlineQuery.query; i++ ){
     var ponys = pony[i]
     results.push({
       type: 'photo',
@@ -21,7 +21,7 @@ bot.on('inline_query', (ctx) => {
 
   console.log(results)
 
-  return ctx.telegram.answerInlineQuery(ctx.inlineQuery.id, results)
+  return answerInlineQuery(results)
 
 })
 
