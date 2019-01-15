@@ -22,15 +22,15 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
   rainbowdash: 10,
   rarity: 11,
   scootaloo: 12,
-  spike: 13,
-  starlight: 14,
-  students: 15,
-  sunset: 16,
-  sweetiebelle: 17,
-  tempest: 18,
-  trixie: 19,
-  twilight: 20,
-  yark: 21
+  spike: 14,
+  starlight: 15,
+  students: 16,
+  sunset: 17,
+  sweetiebelle: 18,
+  tempest: 19,
+  trixie: 20,
+  twilight: 21,
+  yark: 22
   }
 
   const offset = parseInt(inlineQuery.offset) || 0 
