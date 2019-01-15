@@ -8,25 +8,78 @@ const pony = require('./pony.json')
 bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
   //console.log(ctx)
   //console.log(ctx.update.inline_query.query)
-  const results = []
-  Query = inlineQuery.query
+  var list = {
+  applebloom : 0 ,
+  applejack : 1 ,
+  cadance: 2,
+  celestia: 3,
+  derpy: 4,
+  discord: 5,
+  fluttershy: 6,
+  luna: 7,
+  other: 8,
+  pinkie: 9,
+  rainbowdash: 10,
+  rarity: 11,
+  scootaloo: 12,
+  spike: 13,
+  starlight: 14,
+  students: 15,
+  sunset: 16,
+  sweetiebelle: 17,
+  tempest: 18,
+  trixie: 19,
+  twilight: 20,
+  yark: 21
+  }
 
-  for ( i = 0; i < inlineQuery.query; i++ ){
-    var ponys = pony[i]
-    var url = `http://155.94.228.151:3000/${ponys.name}`
+  const offset = parseInt(inlineQuery.offset) || 0 
+
+  console.log(inlineQuery.query)
+
+  const results = []
+
+  console.log(Query)
+
+  if(inlineQuery.query.length === 0){
+    Pony_id = 11
+  }else if(list.hasOwnProperty(inlineQuery.query)){
+    Pony_id = list.inlineQuery.query
+  }else{
+    Pony_id = 11
+  }
+
+  
+  if(Pony_id === 11){
+    Folder = 'rarity'
+  }else{
+    Folder = inlineQuery.query
+  }
+
+  console.log(Folder)
+  console.log(Pony_id)
+  
+
+  var ponys = pony[Pony_id].children
+
+  var num = Object.keys(ponys).length;
+
+  for ( i = 0; i < num; i++ ){
+    var Ponys = ponys[i]
+    var url = `https://jpeg-tnarpxzfna.now.sh/${Folder}/${Ponys.name}`
     results.push({
       type: 'photo',
-      id: ponys.slug,
+      id: Ponys.slug,
       thumb_url: url,
-      photo_url: url
+      photo_url: url,
+      photo_width: 100,
+      photo_height: 100
     })  
   } 
 
-  console.log(pony.);
+  console.log(results)
 
-  //console.log(results)
-
-  //return answerInlineQuery(results)
+  return answerInlineQuery(results, { next_offset: offset + 10 })
 
 })
 
