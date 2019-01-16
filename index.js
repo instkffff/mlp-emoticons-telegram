@@ -9,41 +9,40 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
   //console.log(ctx)
   //console.log(ctx.update.inline_query.query)
   var list = {
-  applebloom : 0 ,
-  applejack : 1 ,
-  cadance: 2,
-  celestia: 3,
-  derpy: 4,
-  discord: 5,
-  fluttershy: 6,
-  luna: 7,
-  other: 8,
-  pinkie: 9,
-  rainbowdash: 10,
-  rarity: 11,
-  scootaloo: 12,
-  spike: 14,
-  starlight: 15,
-  students: 16,
-  sunset: 17,
-  sweetiebelle: 18,
-  tempest: 19,
-  trixie: 20,
-  twilight: 21,
-  yark: 22
+  'applebloom' : 0 ,
+  'applejack' : 1 ,
+  'cadance': 2,
+  'celestia': 3,
+  'derpy': 4,
+  'discord': 5,
+  'fluttershy': 6,
+  'luna': 7,
+  'other': 8,
+  'pinkie': 9,
+  'rainbowdash': 10,
+  'rarity': 11,
+  'scootaloo': 12,
+  'spike': 14,
+  'starlight': 15,
+  'students': 16,
+  'sunset': 17,
+  'sweetiebelle': 18,
+  'tempest': 19,
+  'trixie': 20,
+  'twilight': 21,
+  'yark': 22
   }
 
   const offset = parseInt(inlineQuery.offset) || 0 
 
-  console.log(inlineQuery.query)
-
   const results = []
 
+  console.log(list[inlineQuery.query])
 
   if(inlineQuery.query.length === 0){
     Pony_id = 11
   }else if(list.hasOwnProperty(inlineQuery.query)){
-    Pony_id = list.inlineQuery.query
+    Pony_id = parseInt(list[inlineQuery.query])
   }else{
     Pony_id = 11
   }
@@ -54,11 +53,7 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
   }else{
     Folder = inlineQuery.query
   }
-
-  console.log(Folder)
-  console.log(Pony_id)
   
-
   var ponys = pony[Pony_id].children
 
   var num = Object.keys(ponys).length;
@@ -75,8 +70,6 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
       photo_height: 100
     })  
   } 
-
-  console.log(results)
 
   return answerInlineQuery(results, { next_offset: offset + 10 })
 
