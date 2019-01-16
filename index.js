@@ -6,8 +6,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 const pony = require('./pony.json')
 
 bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
-  //console.log(ctx)
-  //console.log(ctx.update.inline_query.query)
+  
   var list = {
   'applebloom' : 0 ,
   'applejack' : 1 ,
@@ -37,8 +36,6 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
 
   const results = []
 
-  console.log(list[inlineQuery.query])
-
   if(inlineQuery.query.length === 0){
     Pony_id = 11
   }else if(list.hasOwnProperty(inlineQuery.query)){
@@ -46,8 +43,7 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
   }else{
     Pony_id = 11
   }
-
-  
+ 
   if(Pony_id === 11){
     Folder = 'rarity'
   }else{
@@ -74,6 +70,5 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
   return answerInlineQuery(results, { next_offset: offset + 10 })
 
 })
-
 
 bot.launch()
