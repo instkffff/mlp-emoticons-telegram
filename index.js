@@ -60,7 +60,7 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
 
   for ( i = 0; i < num; i++ ){
     var Ponys = ponys[i]
-    var url = `https://jpeg-tnarpxzfna.now.sh/${Folder}/${Ponys.name}`
+    var url = `https://100x100-xgojvnobys.now.sh/${Folder}/${Ponys.name}`
     results.push({
       type: 'photo',
       id: Ponys.slug,
