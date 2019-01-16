@@ -36,5 +36,5 @@
     return info;
   }
 
-  var gallery = dirTree('emotes/JPEG');
+  var gallery = dirTree('emotes/100x100');
   fs.writeFileSync('pony.json', JSON.stringify(gallery.children));
