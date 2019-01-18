@@ -65,7 +65,7 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
     })  
   } 
 
-  return answerInlineQuery(results, { next_offset: offset + 10 })
+  return answerInlineQuery(results, { next_offset: offset + 10 } , { cache_time: 10 })
 
 })
 
