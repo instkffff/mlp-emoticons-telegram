@@ -19,3 +19,5 @@ If you want to get your own bot. Please read Suggestions below.
 4.replace the picture url by your own, or you can rewrite the index.js in order to configuration it in [conf.env](https://github.com/instkffff/mlp-emoticons-telegram/blob/master/conf.env). You can delete the 'photo_width','photo_height' set for different images size. You also can modifier by your own though read the telegram official doc https://core.telegram.org/bots/api#answerinlinequery.
 
 5.replace the bot token in [conf.env](https://github.com/instkffff/mlp-emoticons-telegram/blob/master/conf.env), and get it start in your own way , have fun!
+
+6.I leave a rename tool, you can use it manage your album.
