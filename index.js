@@ -54,14 +54,14 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
 
   for ( i = 0; i < num; i++ ){
     var Ponys = ponys[i]
-    var url = `https://100x100-xgojvnobys.now.sh/${Folder}/${Ponys.name}`
+    var url = `https://200x200-bibtvvfugm.now.sh/${Folder}/${Ponys.name}`
     results.push({
       type: 'photo',
       id: Ponys.slug,
       thumb_url: url,
       photo_url: url,
-      photo_width: 100,
-      photo_height: 100
+      photo_width: 200,
+      photo_height: 200
     })  
   } 
 
