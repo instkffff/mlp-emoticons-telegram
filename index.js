@@ -37,18 +37,16 @@ bot.on('inline_query', async({ inlineQuery, answerInlineQuery}) => {
   const results = []
 
   if(inlineQuery.query.length === 0){
-    Pony_id = 11
+    Folder = Object.keys(list)[Math.floor(Math.random()*Object.keys(list).length)]
+    Pony_id = parseInt(list[Folder])
   }else if(list.hasOwnProperty(inlineQuery.query)){
     Pony_id = parseInt(list[inlineQuery.query])
+    Folder = inlineQuery.query
   }else{
-    Pony_id = 11
+    Folder = Object.keys(list)[Math.floor(Math.random()*Object.keys(list).length)]
+    Pony_id = parseInt(list[Folder])
   }
  
-  if(Pony_id === 11){
-    Folder = 'rarity'
-  }else{
-    Folder = inlineQuery.query
-  }
   
   var ponys = pony[Pony_id].children
 

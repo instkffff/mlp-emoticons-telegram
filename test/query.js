@@ -44,6 +44,11 @@ Pony_id = parseInt(Ponyid)
 ponys = pony[Pony_id].children
 
 
+var item = Object.keys(list)[Math.floor(Math.random()*Object.keys(list).length)];
+
+
+
+console.log(parseInt(list[item]))
 
 
 
