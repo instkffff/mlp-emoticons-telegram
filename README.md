@@ -1,6 +1,6 @@
 # mlp-emoticons-telegram
 Emoticons copy from reddit https://www.reddit.com/r/mylittlepony/ .
-Support by [telegraf.js](https://github.com/telegraf/telegraf).
+Power by [telegraf.js](https://github.com/telegraf/telegraf).
 
 ### Features
 1.Search results by name. (if you want fuzzy search, please do you own. )
