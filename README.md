@@ -14,7 +14,7 @@ If you want to get your own bot. Please read Suggestions below.
 
 2.Write or generator a index list for the json file you generator in first step. You'll be find specification in index.js .
 
-3.You can hosting your picture use [path2json.js](https://github.com/zeit/serve-handler). I have gave you an example [server.js](https://github.com/instkffff/mlp-emoticons-telegram/blob/master/emotes/100x100/serve.js)
+3.You can hosting your picture use [serve-handler](https://github.com/zeit/serve-handler). I have gave you an example [server.js](https://github.com/instkffff/mlp-emoticons-telegram/blob/master/emotes/100x100/serve.js)
 
 4.replace the picture url by your own, or you can rewrite the index.js in order to configuration it in [conf.env](https://github.com/instkffff/mlp-emoticons-telegram/blob/master/conf.env). You can delete the 'photo_width','photo_height' set for different images size. You also can modifier by your own though read the telegram official doc https://core.telegram.org/bots/api#answerinlinequery.
 
